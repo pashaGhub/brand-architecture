@@ -1,0 +1,188 @@
+@media screen and (max-width: 425px) {
+  .Layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "footer";
+
+    .Header {
+      grid-area: header;
+      padding: 5px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 600;
+      background: #333;
+      color: #fff;
+    }
+
+    .Main {
+      grid-area: main;
+    }
+
+    .Nav {
+      grid-area: nav;
+      position: sticky;
+      top: 0;
+      text-transform: uppercase;
+      font-weight: 600;
+      background: #fff;
+
+      &:hover {
+        .Nav-item {
+          display: block;
+        }
+      }
+
+      .Nav-item {
+        display: none;
+        line-height: 1.8rem;
+        font-size: 1.2rem;
+        padding-left: 0.5rem;
+      }
+
+      .active {
+        display: block;
+        background: #333;
+        color: #fff;
+      }
+    }
+
+    .Footer {
+      grid-area: footer;
+      width: 100%;
+      height: 20vw;
+      margin-top: 20vw;
+      border: 2px solid #333;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 426px) {
+  .Layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header header"
+      "nav main"
+      ". main"
+      "footer footer";
+    grid-gap: 1vw 1vw;
+
+    .Header {
+      grid-area: header;
+      padding: 10px;
+      background: #333;
+      color: #fff;
+
+      &-logo {
+        font-size: 3vw;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+    }
+
+    .Main {
+      grid-area: main;
+    }
+
+    .Nav {
+      grid-area: nav;
+      position: sticky;
+      top: 0;
+      text-transform: uppercase;
+      font-weight: 600;
+
+      .Nav-item {
+        display: block;
+        line-height: 1.8rem;
+        font-size: 1rem;
+        padding-left: 0.5rem;
+      }
+
+      .active {
+        background: #333;
+        color: #fff;
+      }
+    }
+
+    .Footer {
+      grid-area: footer;
+      width: 100%;
+      height: 20vw;
+      margin-top: 15vw;
+      border: 2px solid #333;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .Layout {
+    display: grid;
+    max-width: 1440px;
+    margin: 0 auto;
+    grid-template-columns: 20vw auto;
+    grid-template-rows: 5vw 10vw auto auto 10vw;
+    grid-template-areas:
+      "header header"
+      "nav main"
+      "footer main"
+      ". main";
+    grid-gap: 1vw 1vw;
+
+    .Header {
+      grid-area: header;
+      padding: 10px;
+      background: #333;
+      color: #fff;
+
+      &-logo {
+        font-size: 3vw;
+        font-weight: 800;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+      }
+    }
+
+    .Main {
+      grid-area: main;
+
+      .Section {
+        margin-bottom: 10vw;
+      }
+    }
+
+    .Nav {
+      grid-area: nav;
+      position: sticky;
+      top: 0;
+      text-transform: capitalize;
+      font-weight: 600;
+
+      .Nav-item {
+        display: block;
+        line-height: 1.8vw;
+        font-size: 1.2rem;
+        padding-left: 0.5rem;
+      }
+
+      .active {
+        background: #333;
+        color: #fff;
+      }
+    }
+
+    .Footer {
+      grid-area: footer;
+      position: sticky;
+      top: 11vw;
+    }
+  }
+}
