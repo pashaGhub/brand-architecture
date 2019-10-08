@@ -1,11 +1,26 @@
 import React from "react";
 import "./index.scss";
 
-import pht from "../../img/headerImg.jpg";
-import pht2 from "../../img/option2.jpg";
-import small from "../../img/small.jpg";
+import Stretch from "./imgLayoutStyles/Stretch";
+import Window from "./imgLayoutStyles/Window";
+import Rail from "./imgLayoutStyles/Rail";
 
-function SectionItem({ title }) {
+function SectionItem({ title, layout }) {
+  console.log(layout);
+
+  function LayoutStyle() {
+    switch (layout) {
+      case "window":
+        return <Window />;
+      case "stretch":
+        return <Stretch />;
+      case "rail":
+        return <Rail />;
+      default:
+        return <Stretch />;
+    }
+  }
+
   return (
     <div className="Section-item">
       <div className="Item-title">{title}</div>
@@ -14,14 +29,7 @@ function SectionItem({ title }) {
         separating line between logos can be created either by the vertical line
         glyph in the Uber Move Display Light at the same size as the logo.
       </div>
-      <div className="Item-img">
-        <div className="Img-text">About photo</div>
-        <img src={pht} alt="passion" />
-        <img src={pht2} alt="color" />
-        <img src={small} alt="small" />
-        <img src={small} alt="small" />
-        <img src={small} alt="small" />
-      </div>
+      <LayoutStyle />
     </div>
   );
 }

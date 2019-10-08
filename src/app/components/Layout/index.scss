@@ -1,3 +1,4 @@
+@import "../../sass/variables.scss";
 @media screen and (max-width: 425px) {
   .Layout {
     display: grid;
@@ -13,10 +14,10 @@
       grid-area: header;
       padding: 5px;
       text-transform: uppercase;
-      letter-spacing: 3px;
-      font-weight: 600;
-      background: #333;
-      color: #fff;
+      letter-spacing: $title-letter-spacing;
+      font-weight: $default-font-weight;
+      background: $dark-bg;
+      color: $light-font-color;
     }
 
     .Main {
@@ -28,8 +29,8 @@
       position: sticky;
       top: 0;
       text-transform: uppercase;
-      font-weight: 600;
-      background: #fff;
+      font-weight: $default-font-weight;
+      background: $light-bg;
 
       &:hover {
         .Nav-item {
@@ -46,8 +47,8 @@
 
       .active {
         display: block;
-        background: #333;
-        color: #fff;
+        background: $dark-bg;
+        color: $light-font-color;
       }
     }
 
@@ -56,13 +57,13 @@
       width: 100%;
       height: 20vw;
       margin-top: 20vw;
-      border: 2px solid #333;
-      border-radius: 5px;
+      background: $dark-bg;
+      color: $light-font-color;
     }
   }
 }
 
-@media screen and (max-width: 768px) and (min-width: 426px) {
+@media screen and (max-width: 900px) and (min-width: 426px) {
   .Layout {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -72,16 +73,16 @@
       "nav main"
       ". main"
       "footer footer";
-    grid-gap: 1vw 1vw;
+    grid-gap: $default-grid-gap;
 
     .Header {
       grid-area: header;
       padding: 10px;
-      background: #333;
-      color: #fff;
+      background: $dark-bg;
+      color: $light-font-color;
 
       &-logo {
-        font-size: 3vw;
+        font-size: $title-font-size;
         font-weight: 800;
         letter-spacing: 3px;
         text-transform: uppercase;
@@ -101,50 +102,50 @@
 
       .Nav-item {
         display: block;
-        line-height: 1.8rem;
-        font-size: 1rem;
-        padding-left: 0.5rem;
+        line-height: 2rem;
+        font-size: 1.2rem;
+        padding-left: 1rem;
       }
 
       .active {
-        background: #333;
-        color: #fff;
+        background: $dark-bg;
+        color: $light-font-color;
       }
     }
 
     .Footer {
       grid-area: footer;
       width: 100%;
-      height: 20vw;
-      margin-top: 15vw;
-      border: 2px solid #333;
-      border-radius: 5px;
+      height: 10rem;
+      margin-top: 10rem;
+      background: $dark-bg;
+      color: $light-font-color;
     }
   }
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 901px) {
   .Layout {
     display: grid;
     max-width: 1440px;
     margin: 0 auto;
-    grid-template-columns: 20vw auto;
-    grid-template-rows: 5vw 10vw auto auto 10vw;
+    grid-template-columns: 20rem auto;
+    grid-template-rows: auto 10rem auto auto;
     grid-template-areas:
       "header header"
       "nav main"
       "footer main"
       ". main";
-    grid-gap: 1vw 1vw;
+    grid-gap: $default-grid-gap;
 
     .Header {
       grid-area: header;
       padding: 10px;
-      background: #333;
-      color: #fff;
+      background: $dark-bg;
+      color: $light-font-color;
 
       &-logo {
-        font-size: 3vw;
+        font-size: 3rem;
         font-weight: 800;
         letter-spacing: 3px;
         text-transform: uppercase;
@@ -153,9 +154,10 @@
 
     .Main {
       grid-area: main;
+      padding-right: 30px;
 
       .Section {
-        margin-bottom: 10vw;
+        margin-bottom: 10rem;
       }
     }
 
@@ -168,21 +170,23 @@
 
       .Nav-item {
         display: block;
-        line-height: 1.8vw;
+        line-height: 1.8rem;
         font-size: 1.2rem;
-        padding-left: 0.5rem;
+        padding-left: $navbar-padding;
       }
 
       .active {
-        background: #333;
-        color: #fff;
+        background: $dark-bg;
+        color: $light-font-color;
       }
     }
 
     .Footer {
       grid-area: footer;
+      font-size: 1.2rem;
       position: sticky;
-      top: 11vw;
+      top: 11rem;
+      padding-left: $navbar-padding;
     }
   }
 }
