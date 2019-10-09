@@ -1,44 +1,22 @@
 import React from "react";
+import classes from "classnames";
 import "./index.scss";
 
-function Rail() {
-  const logo =
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKVCjH6E6T9kLUqRgOnWIA8NDfCKsYqvAasEb61TFRzuWy2CTv9w&s";
+function Rail({ image, alt, imgText, index, quantity }) {
+  const className = classes("Box-item", {
+    "Margin-bot-lg-scr":
+      (quantity % 3 === 0 && quantity > 3 && index < quantity - 3) ||
+      (quantity % 3 === 1 && quantity > 3 && index < quantity - 1) ||
+      (quantity % 3 === 2 && quantity > 3 && index < quantity - 2),
+    "Margin-bot-med-scr":
+      (quantity % 2 === 0 && quantity > 2 && index < quantity - 2) ||
+      (quantity % 2 === 1 && quantity > 2 && index <= quantity - 2)
+  });
+
   return (
-    <div className="Rail-box">
-      <div className="Box-item">
-        <img src={logo} alt="passion" />
-        <div className="Img-text">About photo</div>
-      </div>
-      <div className="Box-item">
-        <img src={logo} alt="small" />
-        <div className="Img-text">About photo</div>
-      </div>
-      <div className="Box-item">
-        <img src={logo} alt="small" />
-        <div className="Img-text">About photo</div>
-      </div>
-      <div className="Box-item">
-        <img src={logo} alt="small" />
-        <div className="Img-text">
-          Aligning partnership logos should follow clear space rules. The
-          separating line between logos can be created either by the vertical
-          line glyph in the Uber Move Display Light at the same size as the
-        </div>
-      </div>
-      <div className="Box-item">
-        <img src={logo} alt="small" />
-        <div className="Img-text">About photo</div>
-      </div>
-      <div className="Box-item">
-        <img src={logo} alt="small" />
-        <div className="Img-text">
-          Aligning partnership logos should follow clear space rules. The
-          separating line between logos can be created either by the vertical
-          line glyph in the Uber Move Display Light at the same size as the
-          logo.
-        </div>
-      </div>
+    <div className={className}>
+      <img src={image} alt={alt} />
+      <div className="Img-text">{imgText}</div>
     </div>
   );
 }

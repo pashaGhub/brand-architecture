@@ -7,13 +7,13 @@
 
     .Item {
       &-title {
-        font-size: 6vw;
+        font-size: $title-font-size / 2;
         font-weight: $default-font-weight;
         letter-spacing: $title-letter-spacing;
       }
 
       &-text {
-        font-size: 3vw;
+        font-size: $default-font-size / 2;
         letter-spacing: $default-letter-spacing;
         padding: 20px 0;
       }

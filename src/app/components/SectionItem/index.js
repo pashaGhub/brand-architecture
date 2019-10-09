@@ -5,30 +5,52 @@ import Stretch from "./imgLayoutStyles/Stretch";
 import Window from "./imgLayoutStyles/Window";
 import Rail from "./imgLayoutStyles/Rail";
 
-function SectionItem({ title, layout }) {
+function SectionItem({ layout, sectionTitle, sectionText, sectionImgs }) {
   console.log(layout);
-
   function LayoutStyle() {
+    const numOfImg = sectionImgs.length;
+    console.log(numOfImg);
+
     switch (layout) {
       case "window":
-        return <Window />;
+        return (
+          <div className="Window-box">
+            {sectionImgs.map((data, ind) => (
+              <Window {...data} key={ind} index={ind} quantity={numOfImg} />
+            ))}
+          </div>
+        );
       case "stretch":
-        return <Stretch />;
+        return (
+          <div className="Stretch-box">
+            {sectionImgs.map((data, ind) => (
+              <Stretch {...data} key={ind} />
+            ))}
+          </div>
+        );
       case "rail":
-        return <Rail />;
+        return (
+          <div className="Rail-box">
+            {sectionImgs.map((data, ind) => (
+              <Rail {...data} key={ind} index={ind} quantity={numOfImg} />
+            ))}
+          </div>
+        );
       default:
-        return <Stretch />;
+        return (
+          <div className="Stretch-box">
+            {sectionImgs.map((data, ind) => (
+              <Stretch {...data} key={ind} />
+            ))}
+          </div>
+        );
     }
   }
 
   return (
     <div className="Section-item">
-      <div className="Item-title">{title}</div>
-      <div className="Item-text">
-        Aligning partnership logos should follow clear space rules. The
-        separating line between logos can be created either by the vertical line
-        glyph in the Uber Move Display Light at the same size as the logo.
-      </div>
+      <div className="Item-title">{sectionTitle}</div>
+      <div className="Item-text">{sectionText}</div>
       <LayoutStyle />
     </div>
   );

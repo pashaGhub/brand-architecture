@@ -12,12 +12,22 @@
 
     .Header {
       grid-area: header;
-      padding: 5px;
+      height: 2rem;
+      line-height: 2rem;
+      padding-left: 5px;
       text-transform: uppercase;
       letter-spacing: $title-letter-spacing;
       font-weight: $default-font-weight;
       background: $dark-bg;
       color: $light-font-color;
+    }
+
+    .Mobile-header {
+      display: block;
+    }
+
+    .Computer-header {
+      display: none;
     }
 
     .Main {
@@ -89,6 +99,14 @@
       }
     }
 
+    .Mobile-header {
+      display: none;
+    }
+
+    .Computer-header {
+      display: block;
+    }
+
     .Main {
       grid-area: main;
     }
@@ -150,6 +168,14 @@
         letter-spacing: 3px;
         text-transform: uppercase;
       }
+    }
+
+    .Mobile-header {
+      display: none;
+    }
+
+    .Computer-header {
+      display: block;
     }
 
     .Main {

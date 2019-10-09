@@ -1,20 +1,11 @@
 import React from "react";
 import "./index.scss";
 
-import pht from "../../../../img/headerImg.jpg";
-import small from "../../../../img/small.jpg";
-
-function Stretch() {
+function Stretch({ image, alt, imgText }) {
   return (
-    <div className="Stretch-box">
-      <div className="Box-item">
-        <img src={pht} alt="passion" />
-        <div className="Img-text">About photo</div>
-      </div>
-      <div className="Box-item">
-        <img src={small} alt="small" />
-        <div className="Img-text">About photo</div>
-      </div>
+    <div className="Box-item">
+      <img src={image} alt={alt} />
+      <div className="Img-text">{imgText}</div>
     </div>
   );
 }

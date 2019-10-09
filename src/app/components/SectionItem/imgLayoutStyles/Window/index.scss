@@ -1,6 +1,6 @@
 @import "../../../../sass/variables.scss";
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 426px) {
   .Window {
     &-box {
       display: block;
@@ -29,36 +29,36 @@
   }
 }
 
-// @media screen and (max-width: 900px) and (min-width: 426px) {
-//   .Window {
-//     &-box {
-//       display: flex;
-//       justify-content: space-between;
-//       flex-wrap: wrap;
-//       padding: 10px 0;
+@media screen and (max-width: 1200px) and (min-width: 426px) {
+  .Window {
+    &-box {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      padding: 10px 0;
 
-//       .Box-item {
-//         width: 45%;
-//         height: auto;
+      .Box-item {
+        width: 100%;
 
-//         img {
-//           padding: 5px 0;
-//           width: 100%;
-//           height: auto;
-//           max-width: stretch;
-//         }
+        img {
+          padding: 5px 0;
+          width: 100%;
+          height: auto;
+          max-width: stretch;
+        }
 
-//         .Img-text {
-//           width: 100%;
-//           height: auto;
-//           font-size: $img-text-font-size;
-//           font-weight: $default-font-weight;
-//           text-align: left;
-//         }
-//       }
-//     }
-//   }
-// }
+        .Img-text {
+          width: 100%;
+          height: auto;
+          font-size: $img-text-font-size;
+          font-weight: $default-font-weight;
+          text-align: left;
+          padding: 10px 0 50px 10px;
+        }
+      }
+    }
+  }
+}
 
 @media screen and (min-width: 1201px) {
   .Window {
@@ -71,10 +71,6 @@
       .Box-item {
         width: 40%;
         height: auto;
-
-        &:nth-child(-n + 2) {
-          margin-bottom: 5rem;
-        }
 
         img {
           padding: 5px 0;
@@ -90,6 +86,10 @@
           font-weight: $default-font-weight;
           text-align: left;
         }
+      }
+
+      .Margin-bot {
+        margin-bottom: 5rem;
       }
     }
   }
