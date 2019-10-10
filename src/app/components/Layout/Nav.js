@@ -16,7 +16,7 @@ function Nav() {
           to={data.id}
           spy={true}
           smooth={true}
-          offset={0}
+          offset={-50}
           duration={0}
           key={data.id}
         >
