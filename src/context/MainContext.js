@@ -22,9 +22,18 @@ const MainContext = React.createContext();
 
 function MainProvider({ children }) {
   const [main, setMain] = useState([...data]);
+  const [mobileNav, setMobileNav] = useState(false);
+
+  const toggleMobileNav = () => {
+    const newStatus = !mobileNav;
+
+    setMobileNav(newStatus);
+  };
 
   return (
-    <MainContext.Provider value={{ main }}>{children}</MainContext.Provider>
+    <MainContext.Provider value={{ main, mobileNav, toggleMobileNav }}>
+      {children}
+    </MainContext.Provider>
   );
 }
 

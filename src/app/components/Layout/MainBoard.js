@@ -9,9 +9,7 @@ function Main() {
   return (
     <main className="Main">
       {main.map(data => (
-        <div className="Section" id={data.id} key={data.id}>
-          <SectionItem {...data} />
-        </div>
+        <SectionItem {...data} key={data.id} />
       ))}
     </main>
   );

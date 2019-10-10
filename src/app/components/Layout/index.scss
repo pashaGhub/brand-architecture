@@ -1,15 +1,8 @@
 @import "../../sass/variables.scss";
-@media screen and (max-width: 425px) {
+@import "../../sass/mixin.scss";
+@media screen and (max-width: 768px) {
   .Layout {
     display: block;
-    // display: grid;
-    // grid-template-columns: 1fr;
-    // grid-template-rows: auto;
-    // grid-template-areas:
-    //   "header"
-    //   "nav"
-    //   "main"
-    //   "footer";
 
     .Header {
       // grid-area: header;
@@ -32,10 +25,6 @@
     //   display: none;
     // }
 
-    .Main {
-      grid-area: main;
-    }
-
     .Nav {
       // grid-area: nav;
       display: block;
@@ -45,39 +34,58 @@
       font-weight: $default-font-weight;
       background: $light-bg;
 
-      &:hover {
-        .Nav-item {
-          display: block;
-        }
+      .Mobile-menu {
+        width: 100%;
+        text-decoration: none;
+        border: none;
+        line-height: 1.8rem;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        padding-left: 0.5rem;
+        text-align: left;
+        display: block;
+        background: $dark-bg;
+        color: $light-font-color;
       }
 
-      .Nav-item {
-        display: none;
+      &-item {
+        display: block;
         line-height: 1.8rem;
         font-size: 1.2rem;
         padding-left: 0.5rem;
       }
 
       .active {
-        display: block;
         background: $dark-bg;
         color: $light-font-color;
       }
-    }
 
-    .Footer {
-      // grid-area: footer;
-      display: block;
-      width: 100%;
-      height: 20vw;
-      margin-top: 20vw;
-      background: $dark-bg;
-      color: $light-font-color;
+      .Nav-links {
+        display: none;
+
+        &-active {
+          display: block;
+        }
+      }
     }
+  }
+
+  .Main {
+    grid-area: main;
+  }
+
+  .Footer {
+    // grid-area: footer;
+    display: block;
+    width: 100%;
+    height: 20vw;
+    margin-top: 20vw;
+    background: $dark-bg;
+    color: $light-font-color;
   }
 }
 
-@media screen and (max-width: 900px) and (min-width: 426px) {
+@media screen and (max-width: 900px) and (min-width: 769px) {
   .Layout {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -88,6 +96,10 @@
       ". main"
       "footer footer";
     grid-gap: $default-grid-gap;
+
+    .Mobile-menu {
+      display: none;
+    }
 
     .Header {
       grid-area: header;
@@ -189,7 +201,11 @@
       text-transform: capitalize;
       font-weight: 600;
 
-      .Nav-item {
+      .Mobile-menu {
+        display: none;
+      }
+
+      &-item {
         display: block;
         line-height: 1.8rem;
         font-size: 1.2rem;

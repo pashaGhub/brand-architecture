@@ -5,11 +5,9 @@ import Stretch from "./imgLayoutStyles/Stretch";
 import Window from "./imgLayoutStyles/Window";
 import Rail from "./imgLayoutStyles/Rail";
 
-function SectionItem({ layout, sectionTitle, sectionText, sectionImgs }) {
-  console.log(layout);
+function SectionItem({ id, layout, sectionTitle, sectionText, sectionImgs }) {
   function LayoutStyle() {
     const numOfImg = sectionImgs.length;
-    console.log(numOfImg);
 
     switch (layout) {
       case "window":
@@ -48,7 +46,7 @@ function SectionItem({ layout, sectionTitle, sectionText, sectionImgs }) {
   }
 
   return (
-    <div className="Section-item">
+    <div className="Section-item" id={id}>
       <div className="Item-title">{sectionTitle}</div>
       <div className="Item-text">{sectionText}</div>
       <LayoutStyle />
