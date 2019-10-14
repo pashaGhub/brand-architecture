@@ -1,55 +1,39 @@
-import React from "react";
+import React, { useRef, useEffect, useContext } from "react";
 import "./index.scss";
 
-import Stretch from "./imgLayoutStyles/Stretch";
-import Window from "./imgLayoutStyles/Window";
-import Rail from "./imgLayoutStyles/Rail";
+import { MainContext } from "../../../context";
+
+import LayoutStyle from "./imgLayoutStyles";
 
 function SectionItem({ id, layout, sectionTitle, sectionText, sectionImgs }) {
-  function LayoutStyle() {
-    const numOfImg = sectionImgs.length;
+  const { setCurrentSection } = useContext(MainContext);
+  const ref = useRef();
 
-    switch (layout) {
-      case "window":
-        return (
-          <div className="Window-box">
-            {sectionImgs.map((data, ind) => (
-              <Window {...data} key={ind} index={ind} quantity={numOfImg} />
-            ))}
-          </div>
-        );
-      case "stretch":
-        return (
-          <div className="Stretch-box">
-            {sectionImgs.map((data, ind) => (
-              <Stretch {...data} key={ind} />
-            ))}
-          </div>
-        );
-      case "rail":
-        return (
-          <div className="Rail-box">
-            {sectionImgs.map((data, ind) => (
-              <Rail {...data} key={ind} index={ind} quantity={numOfImg} />
-            ))}
-          </div>
-        );
-      default:
-        return (
-          <div className="Stretch-box">
-            {sectionImgs.map((data, ind) => (
-              <Stretch {...data} key={ind} />
-            ))}
-          </div>
-        );
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        console.log(entry);
+
+        if (entry.isIntersecting) {
+          setCurrentSection(sectionTitle);
+        }
+      },
+      {
+        root: null,
+        rootMargin: "-100px",
+        threshold: 0.1
+      }
+    );
+    if (ref.current) {
+      observer.observe(ref.current);
     }
-  }
+  }, [ref]);
 
   return (
-    <div className="Section-item" id={id}>
+    <div className="Section-item" id={id} ref={ref}>
       <div className="Item-title">{sectionTitle}</div>
       <div className="Item-text">{sectionText}</div>
-      <LayoutStyle />
+      <LayoutStyle layout={layout} sectionImgs={sectionImgs} />
     </div>
   );
 }

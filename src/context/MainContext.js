@@ -19,46 +19,33 @@ import { async } from "q";
 //   ]
 // };
 
+const DEFAULT_MOBILE_NAV_CONTEXT = {
+  show: false,
+  currentSection: " "
+};
+
 const MainContext = React.createContext();
 
 function MainProvider({ children }) {
   const [main, setMain] = useState([...data]);
-  const [mobileNav, setMobileNav] = useState(false);
-  const [targetToObserve, setTargetToObserve] = useState([]);
-
+  const [mobileNav, setMobileNav] = useState(DEFAULT_MOBILE_NAV_CONTEXT);
+  // const [targetToObserve, setTargetToObserve] = useState([]);
+  console.log(mobileNav.currentSection);
   const toggleMobileNav = () => {
-    const newStatus = !mobileNav;
-    setMobileNav(newStatus);
+    const newStatus = !mobileNav.show;
+    setMobileNav({ ...mobileNav, show: newStatus });
   };
 
-  window.addEventListener("load", () => {
-    let arr = document.querySelector("#thirdItem");
-    setTargetToObserve([arr]);
-  });
-  console.log(targetToObserve);
+  const setCurrentSection = title => {
+    console.log(title);
 
-  useEffect(() => {
-    console.log(targetToObserve);
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.intersectionRatio === 0.1) {
-          console.log("It works!");
-        }
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1
-      }
-    );
-    if (targetToObserve.current) {
-      observer.observe(targetToObserve.current);
-    }
-  }, []);
+    setMobileNav({ ...mobileNav, currentSection: title });
+  };
 
   return (
-    <MainContext.Provider value={{ main, mobileNav, toggleMobileNav }}>
+    <MainContext.Provider
+      value={{ main, mobileNav, toggleMobileNav, setCurrentSection }}
+    >
       {children}
     </MainContext.Provider>
   );

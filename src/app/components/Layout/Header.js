@@ -4,14 +4,14 @@ import Headroom from "react-headroom";
 function Header() {
   return (
     <React.Fragment>
-      {/* <Headroom className="Header Mobile-header">
+      <Headroom className="Header Mobile-header">
         <header className="Header">
           <div className="Header-logo">logo</div>
         </header>
-      </Headroom> */}
-      <header className="Header">
+      </Headroom>
+      {/* <header className="Header ">
         <div className="Header-logo">logo</div>
-      </header>
+      </header> */}
     </React.Fragment>
   );
 }

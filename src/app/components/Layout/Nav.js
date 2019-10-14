@@ -10,9 +10,9 @@ function Nav() {
   return (
     <nav className="Nav">
       <button className="Mobile-menu" onClick={() => toggleMobileNav()}>
-        menu
+        {mobileNav.currentSection}
       </button>
-      <div className={mobileNav ? "Nav-links-active" : "Nav-links"}>
+      <div className={mobileNav.show ? "Nav-links-active" : "Nav-links"}>
         {main.map(data => (
           <Link
             className="Nav-item"
