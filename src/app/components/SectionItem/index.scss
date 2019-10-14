@@ -1,83 +1,37 @@
 @import "../../sass/variables.scss";
-@media screen and (max-width: 425px) {
-  .Section-item {
-    display: block;
-    height: auto;
-    padding: $section-padding;
+@import "../../sass/mixin.scss";
+.Section-item {
+  display: block;
+  height: auto;
+  padding: $section-padding;
 
-    .Item {
-      &-title {
-        font-size: $title-font-size / 2;
-        font-weight: $default-font-weight;
-        letter-spacing: $title-letter-spacing;
-      }
+  .Item {
+    &-title {
+      font-size: $title-font-size;
+      font-weight: $default-font-weight;
+      letter-spacing: $title-letter-spacing;
 
-      &-text {
-        font-size: $default-font-size / 2;
-        letter-spacing: $default-letter-spacing;
-        padding: 20px 0;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 900px) and (min-width: 426px) {
-  .Section-item {
-    display: block;
-    height: auto;
-    padding: $section-padding;
-
-    .Item {
-      &-title {
-        font-size: $title-font-size;
-        font-weight: $default-font-weight;
-        letter-spacing: $title-letter-spacing;
-      }
-
-      &-text {
-        font-size: $default-font-size;
-        letter-spacing: $default-letter-spacing;
-        padding: 10px 200px 10px 0;
-      }
-
-      &-img {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-        padding: 10px 0;
-
-        .Img-text {
-          width: 100%;
-          font-size: $default-font-size;
-          font-weight: $default-font-weight;
-        }
-        img {
-          padding: 5px 0;
-          max-width: stretch;
-        }
-      }
-    }
-  }
-}
-
-@media screen and (min-width: 901px) {
-  .Section-item {
-    display: block;
-    height: auto;
-    padding: $section-padding;
-
-    .Item {
-      &-title {
-        font-size: $title-font-size;
-        font-weight: $default-font-weight;
+      @include minResponsive(901px) {
         padding-bottom: 30px;
-        letter-spacing: $title-letter-spacing;
       }
 
-      &-text {
-        font-size: $default-font-size;
-        letter-spacing: $default-letter-spacing;
+      @include responsive(425px) {
+        font-size: $title-font-size / 2;
+      }
+    }
+
+    &-text {
+      font-size: $default-font-size;
+      letter-spacing: $default-letter-spacing;
+      padding: 10px 30px 10px 0;
+
+      @include minResponsive(901px) {
         padding: 0 100px 50px 0;
+      }
+
+      @include responsive(425px) {
+        font-size: $default-font-size / 2;
+        padding: 20px 0;
       }
     }
   }

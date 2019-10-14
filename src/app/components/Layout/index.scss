@@ -1,61 +1,82 @@
 @import "../../sass/variables.scss";
 @import "../../sass/mixin.scss";
-@media screen and (max-width: 768px) {
-  .Layout {
+.Layout {
+  display: grid;
+  max-width: 1440px;
+  margin: 0 auto;
+  grid-template-columns: 20rem auto;
+  grid-template-rows: auto 10rem auto auto;
+  grid-template-areas:
+    "header header"
+    "nav main"
+    "footer main"
+    ". main";
+  grid-gap: $default-grid-gap;
+
+  @include responsive(900px) {
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header header"
+      "nav main"
+      ". main"
+      "footer footer";
+  }
+
+  @include responsive(768px) {
     display: block;
+  }
 
-    .Header {
-      // grid-area: header;
+  .Header {
+    grid-area: header;
+    padding: 10px;
+    background: $dark-bg;
+    color: $light-font-color;
+    text-transform: uppercase;
+    letter-spacing: $title-letter-spacing;
+    font-weight: $default-font-weight;
+
+    @include responsive(768px) {
       display: block;
-      height: 2rem;
-      line-height: 2rem;
-      padding-left: 5px;
-      text-transform: uppercase;
+    }
+
+    &-logo {
+      font-size: 3rem;
+      font-weight: $default-font-weight;
       letter-spacing: $title-letter-spacing;
-      font-weight: $default-font-weight;
-      background: $dark-bg;
-      color: $light-font-color;
-    }
-
-    .Mobile-header {
-      display: block;
-    }
-
-    // .Computer-header {
-    //   display: none;
-    // }
-
-    .Nav {
-      // grid-area: nav;
-      display: block;
-      position: sticky;
-      top: 0;
       text-transform: uppercase;
-      font-weight: $default-font-weight;
+
+      @include responsive(768px) {
+        line-height: 1.8rem;
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .Nav {
+    grid-area: nav;
+    position: sticky;
+    top: 0;
+    text-transform: capitalize;
+    font-weight: $default-font-weight;
+
+    .Mobile-menu {
+      display: none;
+    }
+
+    @include responsive(768px) {
       background: $light-bg;
 
       .Mobile-menu {
+        display: block;
         width: 100%;
         text-decoration: none;
         border: none;
         line-height: 1.8rem;
         font-size: 1.2rem;
-        text-transform: uppercase;
+        text-transform: capitalize;
         padding-left: 0.5rem;
         text-align: left;
-        display: block;
-        background: $dark-bg;
-        color: $light-font-color;
-      }
-
-      &-item {
-        display: block;
-        line-height: 1.8rem;
-        font-size: 1.2rem;
-        padding-left: 0.5rem;
-      }
-
-      .active {
         background: $dark-bg;
         color: $light-font-color;
       }
@@ -68,170 +89,56 @@
         }
       }
     }
-  }
 
-  // .Main {
-  // }
+    &-item {
+      display: block;
+      line-height: 1.8rem;
+      font-size: 1.2rem;
+      padding-left: $navbar-padding;
 
-  .Footer {
-    // grid-area: footer;
-    display: block;
-    width: 100%;
-    height: 20vw;
-    margin-top: 20vw;
-    background: $dark-bg;
-    color: $light-font-color;
-  }
-}
-
-@media screen and (max-width: 900px) and (min-width: 769px) {
-  .Layout {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "header header"
-      "nav main"
-      ". main"
-      "footer footer";
-    grid-gap: $default-grid-gap;
-
-    .Mobile-menu {
-      display: none;
+      @include responsive(768px) {
+        padding-left: 0.5rem;
+      }
     }
 
-    .Header {
-      grid-area: header;
-      padding: 10px;
+    .active {
       background: $dark-bg;
       color: $light-font-color;
+    }
+  }
 
-      &-logo {
-        font-size: $title-font-size;
-        font-weight: 800;
-        letter-spacing: 3px;
-        text-transform: uppercase;
+  .Main {
+    grid-area: main;
+
+    @include minResponsive(901px) {
+      padding-right: 5rem;
+
+      .Section-item {
+        margin-bottom: 10rem;
       }
     }
+  }
 
-    // .Mobile-header {
-    //   display: none;
-    // }
-
-    // .Computer-header {
-    //   display: block;
-    // }
-
-    .Nav {
-      grid-area: nav;
+  .Footer {
+    grid-area: footer;
+    @include minResponsive(901px) {
+      font-size: 1.2rem;
       position: sticky;
-      top: 0;
-      text-transform: uppercase;
-      font-weight: 600;
-
-      .Nav-item {
-        display: block;
-        line-height: 2rem;
-        font-size: 1.2rem;
-        padding-left: 1rem;
-      }
-
-      .active {
-        background: $dark-bg;
-        color: $light-font-color;
-      }
+      top: 11rem;
+      padding-left: $navbar-padding;
     }
 
-    .Main {
-      grid-area: main;
-    }
-
-    .Footer {
-      grid-area: footer;
+    @include responsive(900px) {
       width: 100%;
       height: 10rem;
       margin-top: 10rem;
       background: $dark-bg;
       color: $light-font-color;
-    }
-  }
-}
 
-@media screen and (min-width: 901px) {
-  .Layout {
-    display: grid;
-    max-width: 1440px;
-    margin: 0 auto;
-    grid-template-columns: 20rem auto;
-    grid-template-rows: auto 10rem auto auto;
-    grid-template-areas:
-      "header header"
-      "nav main"
-      "footer main"
-      ". main";
-    grid-gap: $default-grid-gap;
-
-    .Header {
-      grid-area: header;
-      padding: 10px;
-      background: $dark-bg;
-      color: $light-font-color;
-
-      &-logo {
-        font-size: 3rem;
-        font-weight: 800;
-        letter-spacing: 3px;
-        text-transform: uppercase;
-      }
-    }
-
-    // .Mobile-header {
-    //   display: none;
-    // }
-
-    // .Computer-header {
-    //   display: block;
-    // }
-
-    .Nav {
-      grid-area: nav;
-      position: sticky;
-      top: 0;
-      text-transform: capitalize;
-      font-weight: 600;
-
-      .Mobile-menu {
-        display: none;
-      }
-
-      &-item {
+      @include responsive(768px) {
         display: block;
-        line-height: 1.8rem;
-        font-size: 1.2rem;
-        padding-left: $navbar-padding;
+        margin-top: 5rem;
       }
-
-      .active {
-        background: $dark-bg;
-        color: $light-font-color;
-      }
-    }
-
-    .Main {
-      grid-area: main;
-      padding-right: 30px;
-
-      .Section {
-        margin-bottom: 10rem;
-      }
-    }
-
-    .Footer {
-      grid-area: footer;
-      font-size: 1.2rem;
-      position: sticky;
-      top: 11rem;
-      padding-left: $navbar-padding;
     }
   }
 }

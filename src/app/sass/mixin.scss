@@ -4,8 +4,14 @@
   }
 }
 
-@mixin mfresponsive($pixels) {
+@mixin minResponsive($pixels) {
   @media screen and (min-width: $pixels) {
+    @content;
+  }
+}
+
+@mixin reponsiveInterval($minPix, $maxPix) {
+  @media screen and (min-width: $minPix) and (max-width: $maxPix) {
     @content;
   }
 }
