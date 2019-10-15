@@ -1,57 +1,26 @@
 @import "../../../../sass/variables.scss";
+@import "../../../../sass/mixin.scss";
 
-@media screen and (max-width: 425px) {
+@include minResponsive(640px) {
   .Stretch {
-    &-box {
-      display: block;
-      padding: 10px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px 0;
 
-      .Box-item {
+    .Box-item {
+      width: 100%;
+      img {
+        padding: 5px 0;
         width: 100%;
-        margin-bottom: 20px;
-        img {
-          padding: 5px 0;
-          width: 100%;
-          height: 100%;
-          max-width: stretch;
-        }
-
-        .Img-text {
-          width: 100%;
-          height: auto;
-          font-size: $img-text-font-size;
-          font-weight: $default-font-weight;
-          text-align: left;
-        }
+        height: auto;
+        max-width: stretch;
       }
-    }
-  }
-}
 
-@media screen and (min-width: 426px) {
-  .Stretch {
-    &-box {
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      padding: 10px 0;
-
-      .Box-item {
+      .Img-text {
         width: 100%;
-        img {
-          padding: 5px 0;
-          width: 100%;
-          height: auto;
-          max-width: stretch;
-        }
-
-        .Img-text {
-          width: 100%;
-          font-size: $img-text-font-size;
-          font-weight: $default-font-weight;
-          text-align: left;
-          padding: 10px 0 50px 10px;
-        }
+        height: auto;
+        text-align: left;
       }
     }
   }

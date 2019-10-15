@@ -1,0 +1,42 @@
+@import "../../../../sass/variables.scss";
+@import "../../../../sass/mixin.scss";
+
+@include minResponsive(640px) {
+  .Items-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px 0;
+
+    .Box-item {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      height: auto;
+
+      .Img {
+        &-container {
+          padding: 5px 0;
+          width: 45%;
+          height: auto;
+          max-width: stretch;
+
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+
+        &-text {
+          width: 45%;
+          height: auto;
+          text-align: left;
+        }
+      }
+    }
+
+    .Margin-bot {
+      margin-bottom: 5rem;
+    }
+  }
+}

@@ -5,7 +5,7 @@ function Stretch({ image, alt, imgText }) {
   return (
     <div className="Box-item">
       <img src={image} alt={alt} />
-      <div className="Img-text">{imgText}</div>
+      <p className="Img-text">{imgText}</p>
     </div>
   );
 }

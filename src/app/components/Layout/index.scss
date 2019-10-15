@@ -1,5 +1,6 @@
 @import "../../sass/variables.scss";
 @import "../../sass/mixin.scss";
+
 .Layout {
   display: grid;
   max-width: 1440px;
@@ -13,30 +14,30 @@
     ". main";
   grid-gap: $default-grid-gap;
 
-  @include responsive(900px) {
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-      "header header"
-      "nav main"
-      ". main"
-      "footer footer";
-  }
+  // @include responsive(900px) {
+  //   grid-template-columns: 1fr 3fr;
+  //   grid-template-rows: auto;
+  //   grid-template-areas:
+  //     "header header"
+  //     "nav main"
+  //     ". main"
+  //     "footer footer";
+  // }
 
-  @include responsive(768px) {
+  @include responsive(1023px) {
     display: block;
   }
 
   .Header {
     grid-area: header;
-    padding: 10px;
+    padding: $sides-padding;
     background: $dark-bg;
     color: $light-font-color;
     text-transform: uppercase;
     letter-spacing: $title-letter-spacing;
     font-weight: $default-font-weight;
 
-    @include responsive(768px) {
+    @include responsive(1023px) {
       display: block;
     }
 
@@ -46,9 +47,9 @@
       letter-spacing: $title-letter-spacing;
       text-transform: uppercase;
 
-      @include responsive(768px) {
-        line-height: 1.8rem;
-        font-size: 1.2rem;
+      @include responsive(1023px) {
+        font-size: 3rem;
+        line-height: 1.2;
       }
     }
   }
@@ -56,6 +57,7 @@
   .Nav {
     grid-area: nav;
     position: sticky;
+    padding: 0;
     top: 0;
     text-transform: capitalize;
     font-weight: $default-font-weight;
@@ -64,18 +66,18 @@
       display: none;
     }
 
-    @include responsive(768px) {
-      background: $light-bg;
+    @include responsive(1023px) {
+      background: #ebebeb;
 
       .Mobile-menu {
         display: block;
         width: 100%;
+        padding: $sides-padding;
         text-decoration: none;
         border: none;
-        line-height: 1.8rem;
         font-size: 1.2rem;
+        line-height: 2;
         text-transform: capitalize;
-        padding-left: 0.5rem;
         text-align: left;
         background: $dark-bg;
         color: $light-font-color;
@@ -92,12 +94,12 @@
 
     &-item {
       display: block;
-      line-height: 1.8rem;
+      padding: $sides-padding;
       font-size: 1.2rem;
-      padding-left: $navbar-padding;
+      line-height: 2;
 
-      @include responsive(768px) {
-        padding-left: 0.5rem;
+      @include minResponsive(1024px) {
+        padding-left: $navbar-padding-left;
       }
     }
 
@@ -109,36 +111,25 @@
 
   .Main {
     grid-area: main;
-
-    @include minResponsive(901px) {
-      padding-right: 5rem;
-
-      .Section-item {
-        margin-bottom: 10rem;
-      }
-    }
+    padding: $sides-padding;
   }
 
   .Footer {
-    grid-area: footer;
-    @include minResponsive(901px) {
+    @include minResponsive(1024px) {
+      grid-area: footer;
       font-size: 1.2rem;
       position: sticky;
       top: 11rem;
-      padding-left: $navbar-padding;
+      padding-left: $navbar-padding-left;
     }
 
-    @include responsive(900px) {
+    @include responsive(1023px) {
+      display: block;
       width: 100%;
       height: 10rem;
       margin-top: 10rem;
       background: $dark-bg;
       color: $light-font-color;
-
-      @include responsive(768px) {
-        display: block;
-        margin-top: 5rem;
-      }
     }
   }
 }

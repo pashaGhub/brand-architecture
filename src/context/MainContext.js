@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import data from "./data";
-import { async } from "q";
 
 // data structure template:const DEFAULT_MAIN_CONTEXT = {
 //   sections: [

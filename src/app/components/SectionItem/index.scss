@@ -3,36 +3,53 @@
 .Section-item {
   display: block;
   height: auto;
-  padding: $section-padding;
+  padding: 0.6rem;
 
-  .Item {
+  @include minResponsive(640px) {
+    margin-bottom: 1.5rem;
+  }
+
+  .Section {
     &-title {
-      font-size: $title-font-size;
+      font-size: 6rem;
+      font-family: apercu, sans-serif;
       font-weight: $default-font-weight;
+      line-height: 1.2;
       letter-spacing: $title-letter-spacing;
+      margin-bottom: 1.8rem;
 
-      @include minResponsive(901px) {
-        padding-bottom: 30px;
+      @include responsive(1023px) {
+        font-size: 5rem;
       }
 
-      @include responsive(425px) {
-        font-size: $title-font-size / 2;
+      @include responsive(639px) {
+        font-size: 2.8rem;
       }
     }
 
     &-text {
-      font-size: $default-font-size;
-      letter-spacing: $default-letter-spacing;
-      padding: 10px 30px 10px 0;
+      margin-bottom: 3rem;
+    }
+  }
 
-      @include minResponsive(901px) {
-        padding: 0 100px 50px 0;
-      }
+  h3 {
+    font-size: 2rem;
+    font-weight: $default-font-weight;
+    margin-bottom: 1rem;
 
-      @include responsive(425px) {
-        font-size: $default-font-size / 2;
-        padding: 20px 0;
-      }
+    @include responsive(1023px) {
+      font-size: 1.9rem;
+      line-height: 1.2;
+    }
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: $main-text-color;
+    margin-bottom: 1rem;
+
+    @include responsive(1023px) {
+      font-size: 1rem;
     }
   }
 }

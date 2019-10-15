@@ -31,8 +31,10 @@ function SectionItem({ id, layout, sectionTitle, sectionText, sectionImgs }) {
 
   return (
     <div className="Section-item" id={id} ref={ref}>
-      <div className="Item-title">{sectionTitle}</div>
-      <div className="Item-text">{sectionText}</div>
+      <div className="Section-title">{sectionTitle}</div>
+      <div className="Section-text">
+        <p>{sectionText}</p>
+      </div>
       <LayoutStyle layout={layout} sectionImgs={sectionImgs} />
     </div>
   );

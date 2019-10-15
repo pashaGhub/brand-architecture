@@ -1,0 +1,28 @@
+@import "../../../sass/variables.scss";
+@import "../../../sass/mixin.scss";
+
+@include responsive(639px) {
+  .Img-box {
+    display: block;
+    padding: 10px 0;
+
+    .Box-item {
+      width: 100%;
+      margin-bottom: 20px;
+      img {
+        padding: 5px 0;
+        width: 100%;
+        height: 100%;
+        max-width: stretch;
+      }
+
+      .Img-text {
+        width: 100%;
+        height: auto;
+        // font-size: $img-text-font-size;
+        // font-weight: $default-font-weight;
+        text-align: left;
+      }
+    }
+  }
+}

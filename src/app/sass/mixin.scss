@@ -10,7 +10,7 @@
   }
 }
 
-@mixin reponsiveInterval($minPix, $maxPix) {
+@mixin responsiveInterval($minPix, $maxPix) {
   @media screen and (min-width: $minPix) and (max-width: $maxPix) {
     @content;
   }

@@ -16,7 +16,7 @@ function Rail({ image, alt, imgText, index, quantity }) {
   return (
     <div className={className}>
       <img src={image} alt={alt} />
-      <div className="Img-text">{imgText}</div>
+      <p className="Img-text">{imgText}</p>
     </div>
   );
 }
