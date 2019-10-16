@@ -120,6 +120,14 @@ const data = [
     ]
   },
   {
+    id: "videoItem",
+    layout: "video",
+    sectionTitle: "video",
+    sectionText:
+      "Aligning partnership logos should follow clear space rules. The separating line between logos can be created either by the vertical line glyph in the Uber Move Display Light at the same size as the logo.",
+    sectionVideo: "https://www.youtube.com/embed/g0FMrjsYAzc?autoplay=1"
+  },
+  {
     id: "fourthItem",
     layout: "itemsList",
     sectionTitle: "fourth section",

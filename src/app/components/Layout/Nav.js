@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-
 import { Link } from "react-scroll";
 import { MainContext } from "../../../context";
 

@@ -1,17 +1,17 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faTwitter,
+  faInstagram
+} from "@fortawesome/free-brands-svg-icons";
 
 function Footer() {
   return (
     <footer className="Footer" id="site-header">
-      <a href="#">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="#">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <a href="#">
-        <i class="fab fa-instagram"></i>
-      </a>
+      <FontAwesomeIcon icon={faFacebook} />
+      <FontAwesomeIcon icon={faTwitter} />
+      <FontAwesomeIcon icon={faInstagram} />
     </footer>
   );
 }

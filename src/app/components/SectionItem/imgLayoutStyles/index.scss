@@ -1,8 +1,9 @@
 @import "../../../sass/variables.scss";
 @import "../../../sass/mixin.scss";
 
+//mobile responsive layout
 @include responsive(639px) {
-  .Img-box {
+  .Section-box {
     display: block;
     padding: 10px 0;
 
@@ -19,8 +20,6 @@
       .Img-text {
         width: 100%;
         height: auto;
-        // font-size: $img-text-font-size;
-        // font-weight: $default-font-weight;
         text-align: left;
       }
     }
