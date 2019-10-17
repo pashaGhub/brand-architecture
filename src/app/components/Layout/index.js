@@ -1,5 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router, Switch } from "react-router-dom";
 import "./index.scss";
 
 import Header from "./Header";

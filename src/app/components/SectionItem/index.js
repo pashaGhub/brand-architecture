@@ -1,5 +1,5 @@
 import React, { useRef, useEffect, useContext } from "react";
-import { Route } from "react-router-dom";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
@@ -40,13 +40,19 @@ function SectionItem({
     }
   }, [ref]);
 
+  const url = `${window.location.origin}/#${id}`;
+
   return (
     <div className="Section-item" id={id} ref={ref}>
       <div className="Section-title">
-        {sectionTitle}{" "}
-        <a href={`#${id}`}>
-          <FontAwesomeIcon icon={faLink} />
-        </a>
+        <span>{sectionTitle}</span>
+        <span>
+          <CopyToClipboard text={url} onCopy={() => console.log(url)}>
+            <button href={`#${id}`}>
+              <FontAwesomeIcon icon={faLink} />
+            </button>
+          </CopyToClipboard>
+        </span>
       </div>
 
       <div className="Section-text">

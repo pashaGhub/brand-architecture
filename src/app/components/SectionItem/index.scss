@@ -5,8 +5,16 @@
   height: auto;
   padding: 0.6rem;
 
-  @include minResponsive(640px) {
-    margin-bottom: 1.5rem;
+  @include responsive(639px) {
+    margin-bottom: 1.8rem;
+  }
+
+  @include responsive(1023px) {
+    margin-bottom: 3rem;
+  }
+
+  @include minResponsive(1024px) {
+    margin-bottom: 4.5rem;
   }
 
   .Section {
@@ -26,17 +34,37 @@
         font-size: 2.8rem;
       }
 
-      a {
+      button {
+        display: inline-flex;
         text-decoration: none;
+        border: none;
+        background: unset;
+        margin: 0;
+        padding: 0;
+        cursor: pointer;
         color: black;
+        width: 2rem;
+        height: 2rem;
+        padding-left: 0.5rem;
 
-        svg {
-          width: 5%;
-          height: 5%;
-          &:hover {
-            opacity: 0.2;
-          }
+        @include responsive(1023px) {
+          width: 1.8rem;
+          height: 1.8rem;
         }
+
+        @include responsive(639px) {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        &:hover {
+          opacity: 0.2;
+        }
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
       }
     }
 

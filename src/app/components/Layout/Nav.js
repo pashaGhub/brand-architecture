@@ -16,10 +16,12 @@ function Nav() {
             className="Nav-item"
             activeClass="active"
             to={data.id}
+            hashSpy={true}
             spy={true}
             smooth={true}
             offset={-50}
-            duration={0}
+            duration={500}
+            delay={100}
             key={data.id}
           >
             {data.sectionTitle}
