@@ -15,3 +15,11 @@
     @content;
   }
 }
+
+@mixin marginBotLastChildExcluded($marg: 1rem) {
+  margin-bottom: $marg;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

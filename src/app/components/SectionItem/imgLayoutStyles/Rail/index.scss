@@ -38,8 +38,16 @@
       }
     }
 
-    .Margin-bot-lg-scr {
-      margin-bottom: 5rem;
+    @include minResponsive(1024px) {
+      .Margin-bot-lg-scr {
+        margin-bottom: 5rem;
+      }
+    }
+
+    @include responsive(1023px) {
+      .Margin-bot-med-scr {
+        margin-bottom: 5rem;
+      }
     }
   }
 }

@@ -10,7 +10,7 @@ function Nav() {
       <button className="Mobile-menu" onClick={() => toggleMobileNav()}>
         {mobileNav.currentSection}
       </button>
-      <div className={mobileNav.show ? "Nav-links-active" : "Nav-links"}>
+      <div className={mobileNav.show ? "Nav-links show" : "Nav-links hide"}>
         {main.map(data => (
           <Link
             className="Nav-item"
@@ -20,7 +20,7 @@ function Nav() {
             spy={true}
             smooth={true}
             offset={-50}
-            duration={500}
+            duration={1000}
             delay={100}
             key={data.id}
           >

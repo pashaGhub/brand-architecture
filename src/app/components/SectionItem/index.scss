@@ -17,6 +17,10 @@
     margin-bottom: 4.5rem;
   }
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   .Section {
     &-title {
       font-size: 6rem;

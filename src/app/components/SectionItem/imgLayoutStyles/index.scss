@@ -2,19 +2,22 @@
 @import "../../../sass/mixin.scss";
 
 //mobile responsive layout
-@include responsive(639px) {
-  .Section-box {
-    display: block;
-    padding: 10px 0;
+.Section-box {
+  display: block;
+  @include responsive(639px) {
+    // padding: 10px 0;
 
     .Box-item {
       width: 100%;
-      margin-bottom: 20px;
+      @include marginBotLastChildExcluded(3rem);
+
       img {
-        padding: 5px 0;
+        padding: 0;
         width: 100%;
         height: 100%;
         max-width: stretch;
+
+        @include marginBotLastChildExcluded();
       }
 
       .Img-text {

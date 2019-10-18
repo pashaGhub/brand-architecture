@@ -13,10 +13,20 @@ function Rail({ image, alt, imgText, index, quantity }) {
       (quantity % 2 === 1 && quantity > 2 && index <= quantity - 2)
   });
 
+  console.log(imgText, typeof imgText === "string");
+
   return (
     <div className={className}>
       <img src={image} alt={alt} />
-      <p className="Img-text">{imgText}</p>
+      {typeof imgText === "string" ? (
+        <p className="Img-text">{imgText}</p>
+      ) : (
+        imgText.map((item, index) => (
+          <p className="Img-text" key={index}>
+            {item}
+          </p>
+        ))
+      )}
     </div>
   );
 }

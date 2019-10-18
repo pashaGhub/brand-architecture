@@ -17,8 +17,9 @@ function SectionItem({
   sectionImgs,
   sectionVideo
 }) {
-  const { setCurrentSection } = useContext(MainContext);
+  const { setCurrentSection, showPopup } = useContext(MainContext);
   const ref = useRef();
+  const url = `${window.location.origin}/#${id}`;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,7 +32,7 @@ function SectionItem({
       },
       {
         root: null,
-        rootMargin: "-100px",
+        rootMargin: "0px",
         threshold: 0.1
       }
     );
@@ -40,14 +41,12 @@ function SectionItem({
     }
   }, [ref]);
 
-  const url = `${window.location.origin}/#${id}`;
-
   return (
     <div className="Section-item" id={id} ref={ref}>
       <div className="Section-title">
         <span>{sectionTitle}</span>
         <span>
-          <CopyToClipboard text={url} onCopy={() => console.log(url)}>
+          <CopyToClipboard text={url} onCopy={() => showPopup()}>
             <button href={`#${id}`}>
               <FontAwesomeIcon icon={faLink} />
             </button>

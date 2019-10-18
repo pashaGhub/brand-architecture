@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import data from "./data";
 
 // data structure template:const DEFAULT_MAIN_CONTEXT = {
@@ -28,7 +28,8 @@ const MainContext = React.createContext();
 function MainProvider({ children }) {
   const [main, setMain] = useState([...data]);
   const [mobileNav, setMobileNav] = useState(DEFAULT_MOBILE_NAV_CONTEXT);
-  // const [targetToObserve, setTargetToObserve] = useState([]);
+  const [popup, setPopup] = useState("hide");
+
   console.log(mobileNav.currentSection);
   const toggleMobileNav = () => {
     const newStatus = !mobileNav.show;
@@ -41,9 +42,24 @@ function MainProvider({ children }) {
     setMobileNav({ ...mobileNav, currentSection: title });
   };
 
+  const showPopup = () => {
+    setPopup("show");
+
+    setTimeout(() => {
+      setPopup("hide");
+    }, 2500);
+  };
+
   return (
     <MainContext.Provider
-      value={{ main, mobileNav, toggleMobileNav, setCurrentSection }}
+      value={{
+        main,
+        popup,
+        showPopup,
+        mobileNav,
+        toggleMobileNav,
+        setCurrentSection
+      }}
     >
       {children}
     </MainContext.Provider>

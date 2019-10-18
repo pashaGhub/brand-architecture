@@ -120,6 +120,46 @@ const data = [
     ]
   },
   {
+    id: "color",
+    layout: "rail",
+    sectionTitle: "color",
+    sectionText:
+      "Aligning partnership logos should follow clear space rules. The separating line between logos can be created either by the vertical line glyph in the Uber Move Display Light at the same size as the logo.",
+    sectionImgs: [
+      {
+        image: "https://www.colorhexa.com/333333.png",
+        alt: "yourAlt",
+        imgText: ["#333", "hex", "RGB	51 3	0", "CMYK	0	94 100 80"]
+      },
+      {
+        image: "https://www.colorhexa.com/333333.png",
+        alt: "yourAlt",
+        imgText: ["#333", "hex", "RGB	51 3	0", "CMYK	0	94 100 80"]
+      },
+      {
+        image: "https://www.colorhexa.com/333333.png",
+        alt: "yourAlt",
+        imgText: ["#333", "hex", "RGB	51 3	0", "CMYK	0	94 100 80"]
+      },
+      {
+        image: "https://www.colorhexa.com/333333.png",
+        alt: "yourAlt",
+        imgText: ["#333", "hex", "RGB	51 3	0", "CMYK	0	94 100 80"]
+      },
+      {
+        image: "https://www.colorhexa.com/333333.png",
+        alt: "yourAlt",
+        imgText: ["#333", "hex", "RGB	51 3	0", "CMYK	0	94 100 80"]
+      }
+      // {
+      //   image:
+      //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKVCjH6E6T9kLUqRgOnWIA8NDfCKsYqvAasEb61TFRzuWy2CTv9w&s",
+      //   alt: "yourAlt",
+      //   imgText: "Something about image"
+      // }
+    ]
+  },
+  {
     id: "videoItem",
     layout: "video",
     sectionTitle: "video",

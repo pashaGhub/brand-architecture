@@ -29,6 +29,7 @@
   }
 
   .Header {
+    z-index: 2;
     grid-area: header;
     padding: $sides-padding;
     background: $dark-bg;
@@ -55,11 +56,10 @@
   }
 
   .Nav {
-    z-index: 999;
     grid-area: nav;
     position: sticky;
-    padding: 0;
     top: 0;
+    padding: 0;
     text-transform: capitalize;
     font-weight: $default-font-weight;
 
@@ -68,9 +68,8 @@
     }
 
     @include responsive(1023px) {
-      background: #ebebeb;
-
       .Mobile-menu {
+        z-index: 2;
         display: block;
         width: 100%;
         padding: $sides-padding;
@@ -85,11 +84,19 @@
       }
 
       .Nav-links {
-        display: none;
+        z-index: -1;
+        position: fixed;
+        background: #ebebeb;
+        width: 100%;
+        transition: 0.3s ease-in-out;
+      }
 
-        &-active {
-          display: block;
-        }
+      .show {
+        top: 2rem;
+      }
+
+      .hide {
+        top: -100%;
       }
     }
 

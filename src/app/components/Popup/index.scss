@@ -1,0 +1,18 @@
+.Popup {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  background: #ffebcd;
+  text-align: center;
+  transition: all 1s ease-in-out;
+}
+
+.show {
+  top: 0;
+}
+
+.hide {
+  top: -100%;
+}
