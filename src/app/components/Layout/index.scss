@@ -29,7 +29,7 @@
   }
 
   .Header {
-    z-index: 2;
+    z-index: 1;
     grid-area: header;
     padding: $sides-padding;
     background: $dark-bg;
@@ -40,6 +40,7 @@
 
     @include responsive(1023px) {
       display: block;
+      position: relative;
     }
 
     &-logo {
@@ -69,7 +70,7 @@
 
     @include responsive(1023px) {
       .Mobile-menu {
-        z-index: 2;
+        z-index: 1;
         display: block;
         width: 100%;
         padding: $sides-padding;
@@ -85,35 +86,41 @@
 
       .Nav-links {
         z-index: -1;
-        position: fixed;
+        position: absolute;
         background: #ebebeb;
         width: 100%;
         transition: 0.3s ease-in-out;
-      }
 
-      .show {
-        top: 2rem;
-      }
+        &-show {
+          margin-top: 0;
+        }
 
-      .hide {
-        top: -100%;
+        &-hide {
+          margin-top: -100%;
+        }
       }
     }
 
-    &-item {
+    &-link {
       display: block;
       padding: $sides-padding;
       font-size: 1.2rem;
       line-height: 2;
+      padding-left: 2rem;
+      // @include minResponsive(1024px) {
 
-      @include minResponsive(1024px) {
-        padding-left: $navbar-padding-left;
-      }
+      // }
     }
 
-    .active {
+    .Section-active {
       background: $dark-bg;
       color: $light-font-color;
+    }
+
+    ul {
+      margin: 0.5rem 0;
+      padding-left: 4rem;
+      list-style: none;
     }
   }
 
@@ -129,10 +136,6 @@
     color: $light-font-color;
     @include minResponsive(1024px) {
       grid-area: footer;
-      // font-size: 1.2rem;
-      // position: sticky;
-      // top: 11rem;
-      // padding-left: $navbar-padding-left;
     }
 
     @include responsive(1023px) {

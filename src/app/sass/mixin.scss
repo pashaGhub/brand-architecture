@@ -23,3 +23,16 @@
     margin-bottom: 0;
   }
 }
+
+@mixin defaultBtn() {
+  button {
+    display: inline-flex;
+    text-decoration: none;
+    border: none;
+    background: unset;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    @content;
+  }
+}

@@ -9,17 +9,11 @@ import { MainContext } from "../../../context";
 
 import LayoutStyle from "./imgLayoutStyles";
 
-function SectionItem({
-  id,
-  layout,
-  sectionTitle,
-  sectionText,
-  sectionImgs,
-  sectionVideo
-}) {
+function SectionItem({ id, sectionTitle, topics }) {
   const { setCurrentSection, showPopup } = useContext(MainContext);
   const ref = useRef();
   const url = `${window.location.origin}/#${id}`;
+  const currentHash = `#${id}`;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -31,9 +25,7 @@ function SectionItem({
         }
       },
       {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1
+        rootMargin: "0px 0px -90%"
       }
     );
     if (ref.current) {
@@ -54,14 +46,33 @@ function SectionItem({
         </span>
       </div>
 
-      <div className="Section-text">
-        <p>{sectionText}</p>
-      </div>
-      <LayoutStyle
-        layout={layout}
-        sectionImgs={sectionImgs}
-        sectionVideo={sectionVideo}
-      />
+      {topics.map(
+        ({ topicID, layout, topicTitle, topicText, topicImgs, topicVideo }) => (
+          <React.Fragment>
+            <div className="Topic-title" id={`${id}-${topicID}`}>
+              <span>
+                {topicTitle}
+                <CopyToClipboard
+                  text={`${url}-${topicID}`}
+                  onCopy={() => showPopup()}
+                >
+                  <button href={`#${id}-${topicID}`}>
+                    <FontAwesomeIcon icon={faLink} />
+                  </button>
+                </CopyToClipboard>
+              </span>
+            </div>
+            <div className="Topic-text">
+              <p>{topicText}</p>
+            </div>
+            <LayoutStyle
+              layout={layout}
+              sectionImgs={topicImgs}
+              sectionVideo={topicVideo}
+            />
+          </React.Fragment>
+        )
+      )}
     </div>
   );
 }
