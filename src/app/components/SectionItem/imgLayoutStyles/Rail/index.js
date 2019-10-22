@@ -13,8 +13,6 @@ function Rail({ image, alt, imgText, index, quantity }) {
       (quantity % 2 === 1 && quantity > 2 && index <= quantity - 2)
   });
 
-  console.log(imgText, typeof imgText === "string");
-
   return (
     <div className={className}>
       <img src={image} alt={alt} />

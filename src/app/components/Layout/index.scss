@@ -88,6 +88,7 @@
         z-index: -1;
         position: absolute;
         background: #ebebeb;
+        padding-bottom: 1rem;
         width: 100%;
         transition: 0.3s ease-in-out;
 
@@ -96,7 +97,7 @@
         }
 
         &-hide {
-          margin-top: -100%;
+          margin-top: -1000%;
         }
       }
     }
@@ -107,20 +108,24 @@
       font-size: 1.2rem;
       line-height: 2;
       padding-left: 2rem;
-      // @include minResponsive(1024px) {
-
-      // }
     }
 
     .Section-active {
-      background: $dark-bg;
-      color: $light-font-color;
+      border-bottom: solid 2px #333;
     }
 
     ul {
       margin: 0.5rem 0;
       padding-left: 4rem;
       list-style: none;
+    }
+
+    .Topic {
+      opacity: 0.5;
+
+      &-active {
+        opacity: 1;
+      }
     }
   }
 

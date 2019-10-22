@@ -11,9 +11,9 @@ import LayoutStyle from "./imgLayoutStyles";
 
 function SectionItem({ id, sectionTitle, topics }) {
   const { setCurrentSection, showPopup } = useContext(MainContext);
-  const ref = useRef();
+  const sectionRef = useRef();
+  const topicRef = useRef();
   const url = `${window.location.origin}/#${id}`;
-  const currentHash = `#${id}`;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,13 +28,17 @@ function SectionItem({ id, sectionTitle, topics }) {
         rootMargin: "0px 0px -90%"
       }
     );
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
-  }, [ref]);
+
+    if (topicRef.current) {
+      observer.observe(topicRef.current);
+    }
+  }, [sectionRef, topicRef]);
 
   return (
-    <div className="Section-item" id={id} ref={ref}>
+    <div className="Section-item" id={id} ref={sectionRef}>
       <div className="Section-title">
         <span>{sectionTitle}</span>
         <span>
@@ -48,9 +52,9 @@ function SectionItem({ id, sectionTitle, topics }) {
 
       {topics.map(
         ({ topicID, layout, topicTitle, topicText, topicImgs, topicVideo }) => (
-          <React.Fragment>
-            <div className="Topic-title" id={`${id}-${topicID}`}>
-              <span>
+          <div id={`${id}-${topicID}`} ref={topicRef} key={`${id}-${topicID}`}>
+            <div className="Topic-title">
+              <div className="Title-text">
                 {topicTitle}
                 <CopyToClipboard
                   text={`${url}-${topicID}`}
@@ -60,17 +64,19 @@ function SectionItem({ id, sectionTitle, topics }) {
                     <FontAwesomeIcon icon={faLink} />
                   </button>
                 </CopyToClipboard>
-              </span>
+              </div>
+
+              <span className="Title-line"> </span>
             </div>
             <div className="Topic-text">
               <p>{topicText}</p>
             </div>
             <LayoutStyle
               layout={layout}
-              sectionImgs={topicImgs}
-              sectionVideo={topicVideo}
+              topicImgs={topicImgs}
+              topicVideo={topicVideo}
             />
-          </React.Fragment>
+          </div>
         )
       )}
     </div>

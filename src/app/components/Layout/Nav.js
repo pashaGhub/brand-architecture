@@ -18,7 +18,7 @@ function Nav() {
         }
       >
         {main.map(data => (
-          <div>
+          <div key={data.id}>
             <Link
               className="Nav-link"
               activeClass="Section-active"
@@ -29,13 +29,25 @@ function Nav() {
               offset={-50}
               duration={1000}
               delay={100}
-              key={data.id}
             >
               {data.sectionTitle}
             </Link>
             <ul>
               {data.topics.map(item => (
-                <li>{item.topicTitle}</li>
+                <li key={item.topicID}>
+                  <Link
+                    className="Topic"
+                    activeClass="Topic-active"
+                    to={`${data.id}-${item.topicID}`}
+                    spy={true}
+                    smooth={true}
+                    offset={-50}
+                    duration={1000}
+                    delay={100}
+                  >
+                    {item.topicTitle}
+                  </Link>
+                </li>
               ))}
             </ul>
           </div>

@@ -7,15 +7,15 @@ import Rail from "./Rail";
 import ItemsList from "./ItemsList";
 import VideoBox from "./VideoBox";
 
-function LayoutStyle({ layout, sectionImgs, sectionVideo }) {
-  if (sectionImgs) {
-    const numOfImg = sectionImgs.length;
+function LayoutStyle({ layout, topicImgs, topicVideo }) {
+  if (topicImgs) {
+    const numOfImg = topicImgs.length;
 
     switch (layout) {
       case "window":
         return (
           <div className="Section-box Window">
-            {sectionImgs.map((data, ind) => (
+            {topicImgs.map((data, ind) => (
               <Window {...data} key={ind} index={ind} quantity={numOfImg} />
             ))}
           </div>
@@ -23,7 +23,7 @@ function LayoutStyle({ layout, sectionImgs, sectionVideo }) {
       case "stretch":
         return (
           <div className="Section-box Stretch">
-            {sectionImgs.map((data, ind) => (
+            {topicImgs.map((data, ind) => (
               <Stretch {...data} key={ind} />
             ))}
           </div>
@@ -31,7 +31,7 @@ function LayoutStyle({ layout, sectionImgs, sectionVideo }) {
       case "rail":
         return (
           <div className="Section-box Rail">
-            {sectionImgs.map((data, ind) => (
+            {topicImgs.map((data, ind) => (
               <Rail {...data} key={ind} index={ind} quantity={numOfImg} />
             ))}
           </div>
@@ -39,7 +39,7 @@ function LayoutStyle({ layout, sectionImgs, sectionVideo }) {
       case "itemsList":
         return (
           <div className="Section-box Items-list">
-            {sectionImgs.map((data, ind) => (
+            {topicImgs.map((data, ind) => (
               <ItemsList {...data} key={ind} index={ind} quantity={numOfImg} />
             ))}
           </div>
@@ -47,7 +47,7 @@ function LayoutStyle({ layout, sectionImgs, sectionVideo }) {
       default:
         return (
           <div className="Section-box Stretch">
-            {sectionImgs.map((data, ind) => (
+            {topicImgs.map((data, ind) => (
               <Stretch {...data} key={ind} />
             ))}
           </div>
@@ -55,7 +55,7 @@ function LayoutStyle({ layout, sectionImgs, sectionVideo }) {
     }
   }
 
-  return <VideoBox videoSrc={sectionVideo} />;
+  return <VideoBox videoSrc={topicVideo} />;
 }
 
 export default LayoutStyle;

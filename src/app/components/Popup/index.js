@@ -8,8 +8,8 @@ function Popup() {
   const { popup } = useContext(MainContext);
 
   const className = classes("Popup", {
-    show: popup === "show",
-    hide: popup === "hide"
+    show: popup,
+    hide: !popup
   });
   console.log(popup);
 
