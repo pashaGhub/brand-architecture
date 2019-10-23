@@ -14,22 +14,12 @@
     "footer footer";
   grid-gap: $default-grid-gap;
 
-  // @include responsive(900px) {
-  //   grid-template-columns: 1fr 3fr;
-  //   grid-template-rows: auto;
-  //   grid-template-areas:
-  //     "header header"
-  //     "nav main"
-  //     ". main"
-  //     "footer footer";
-  // }
-
   @include responsive(1023px) {
     display: block;
   }
 
   .Header {
-    z-index: 1;
+    z-index: 200;
     grid-area: header;
     padding: $sides-padding;
     background: $dark-bg;
@@ -63,6 +53,7 @@
     padding: 0;
     text-transform: capitalize;
     font-weight: $default-font-weight;
+    z-index: 100;
 
     .Mobile-menu {
       display: none;
@@ -70,6 +61,7 @@
 
     @include responsive(1023px) {
       .Mobile-menu {
+        position: relative;
         z-index: 1;
         display: block;
         width: 100%;
@@ -85,7 +77,6 @@
       }
 
       .Nav-links {
-        z-index: -1;
         position: absolute;
         background: #ebebeb;
         padding-bottom: 1rem;

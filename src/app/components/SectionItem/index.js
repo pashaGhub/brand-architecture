@@ -18,7 +18,7 @@ function SectionItem({ id, sectionTitle, topics }) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        console.log(entry);
+        // console.log(entry);
 
         if (entry.isIntersecting) {
           setCurrentSection(sectionTitle);

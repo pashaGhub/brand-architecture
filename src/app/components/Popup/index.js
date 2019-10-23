@@ -11,7 +11,6 @@ function Popup() {
     show: popup,
     hide: !popup
   });
-  console.log(popup);
 
   return (
     <div className={className}>

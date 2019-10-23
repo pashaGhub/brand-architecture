@@ -4,7 +4,12 @@ import "./index.scss";
 function VideoBox({ videoSrc }) {
   return (
     <div className="Video">
-      <iframe src={videoSrc} frameborder="0" allowfullscreen="true"></iframe>
+      <iframe
+        title="video"
+        src={videoSrc}
+        frameborder="0"
+        allowFullScreen="true"
+      ></iframe>
     </div>
   );
 }

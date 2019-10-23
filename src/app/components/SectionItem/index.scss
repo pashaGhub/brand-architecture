@@ -79,7 +79,6 @@
 
     @include responsive(1023px) {
       margin-bottom: 2.5rem;
-      z-index: -1;
     }
 
     @include responsive(639px) {

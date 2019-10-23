@@ -36,7 +36,7 @@ function MainProvider({ children }) {
   };
 
   const setCurrentSection = title => {
-    console.log(title);
+    // console.log(title);
 
     setMobileNav({ ...mobileNav, currentSection: title });
   };
