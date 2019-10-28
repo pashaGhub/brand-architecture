@@ -3,12 +3,12 @@ import { Link } from "react-scroll";
 import { MainContext } from "../../../context";
 
 function Nav() {
-  const { main, mobileNav, toggleMobileNav } = useContext(MainContext);
+  const { main, mobileNav, toggleMobileNav, topic } = useContext(MainContext);
 
   return (
     <nav className="Nav">
       <button className="Mobile-menu" onClick={() => toggleMobileNav()}>
-        {mobileNav.currentSection}
+        {`${mobileNav.currentSection} - ${topic}`}
       </button>
       <div
         className={

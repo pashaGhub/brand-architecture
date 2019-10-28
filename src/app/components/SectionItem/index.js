@@ -7,12 +7,13 @@ import "./index.scss";
 
 import { MainContext } from "../../../context";
 
-import LayoutStyle from "./imgLayoutStyles";
+// import LayoutStyle from "./imgLayoutStyles";
+
+import Test from "./imgLayoutStyles";
 
 function SectionItem({ id, sectionTitle, topics }) {
   const { setCurrentSection, showPopup } = useContext(MainContext);
   const sectionRef = useRef();
-  const topicRef = useRef();
   const url = `${window.location.origin}/#${id}`;
 
   useEffect(() => {
@@ -32,10 +33,10 @@ function SectionItem({ id, sectionTitle, topics }) {
       observer.observe(sectionRef.current);
     }
 
-    if (topicRef.current) {
-      observer.observe(topicRef.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
-  }, [sectionRef, topicRef]);
+  }, [sectionRef]);
 
   return (
     <div className="Section-item" id={id} ref={sectionRef}>
@@ -50,35 +51,9 @@ function SectionItem({ id, sectionTitle, topics }) {
         </span>
       </div>
 
-      {topics.map(
-        ({ topicID, layout, topicTitle, topicText, topicImgs, topicVideo }) => (
-          <div id={`${id}-${topicID}`} ref={topicRef} key={`${id}-${topicID}`}>
-            <div className="Topic-title">
-              <div className="Title-text">
-                {topicTitle}
-                <CopyToClipboard
-                  text={`${url}-${topicID}`}
-                  onCopy={() => showPopup()}
-                >
-                  <button href={`#${id}-${topicID}`}>
-                    <FontAwesomeIcon icon={faLink} />
-                  </button>
-                </CopyToClipboard>
-              </div>
-
-              <span className="Title-line"> </span>
-            </div>
-            <div className="Topic-text">
-              <p>{topicText}</p>
-            </div>
-            <LayoutStyle
-              layout={layout}
-              topicImgs={topicImgs}
-              topicVideo={topicVideo}
-            />
-          </div>
-        )
-      )}
+      {topics.map(data => (
+        <Test {...data} id={id} key={data.topicID} />
+      ))}
     </div>
   );
 }

@@ -302,11 +302,11 @@ const data = [
         topicText:
           "Aligning partnership logos should follow clear space rules. The separating line between logos can be created either by the vertical line glyph in the Uber Move Display Light at the same size as the logo.",
         topicImgs: [
-          // {
-          //   image: "https://i.redd.it/60za68a9qpj31.jpg",
-          //   alt: "but it runs",
-          //   imgText: "But it runs :)"
-          // },
+          {
+            image: "https://i.redd.it/60za68a9qpj31.jpg",
+            alt: "but it runs",
+            imgText: "But it runs :)"
+          },
           {
             image:
               "https://images.unsplash.com/photo-1529268209110-62be1d87fe75?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80",

@@ -20,7 +20,8 @@ import data from "./data";
 
 const DEFAULT_MOBILE_NAV_CONTEXT = {
   show: false,
-  currentSection: " "
+  currentSection: " ",
+  currentTopic: " "
 };
 
 const MainContext = React.createContext();
@@ -28,6 +29,7 @@ const MainContext = React.createContext();
 function MainProvider({ children }) {
   const [main, setMain] = useState([...data]);
   const [mobileNav, setMobileNav] = useState(DEFAULT_MOBILE_NAV_CONTEXT);
+  const [topic, setTopic] = useState(" ");
   const [popup, setPopup] = useState(false);
 
   const toggleMobileNav = () => {
@@ -36,9 +38,15 @@ function MainProvider({ children }) {
   };
 
   const setCurrentSection = title => {
-    // console.log(title);
+    console.log(title);
 
     setMobileNav({ ...mobileNav, currentSection: title });
+  };
+
+  const setCurrentTopic = topic => {
+    console.log(topic);
+
+    setTopic(topic);
   };
 
   const showPopup = () => {
@@ -57,7 +65,9 @@ function MainProvider({ children }) {
         showPopup,
         mobileNav,
         toggleMobileNav,
-        setCurrentSection
+        setCurrentSection,
+        setCurrentTopic,
+        topic
       }}
     >
       {children}
