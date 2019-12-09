@@ -74,19 +74,17 @@ function Test({
 }) {
   const { setCurrentTopic, showPopup } = useContext(MainContext);
   const topicRef = useRef();
-  const url = `${window.location.origin}/#${id}`;
+  const url = `${window.location.origin}${window.location.pathname}#${id}`;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // console.log(entry);
-
         if (entry.isIntersecting) {
           setCurrentTopic(topicTitle);
         }
       },
       {
-        // rootMargin: "0px 0px -90%"
+        rootMargin: "0px 0px -90%"
       }
     );
     if (topicRef.current) {

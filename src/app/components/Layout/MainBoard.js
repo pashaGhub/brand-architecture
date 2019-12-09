@@ -8,9 +8,13 @@ function Main() {
 
   return (
     <main className="Main">
-      {main.map(data => (
-        <SectionItem {...data} key={data.id} />
-      ))}
+      {main.map(data => {
+        return (
+          <React.Fragment key={data.id}>
+            <SectionItem {...data} />
+          </React.Fragment>
+        );
+      })}
     </main>
   );
 }

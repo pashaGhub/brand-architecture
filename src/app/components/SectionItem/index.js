@@ -14,13 +14,11 @@ import Test from "./imgLayoutStyles";
 function SectionItem({ id, sectionTitle, topics }) {
   const { setCurrentSection, showPopup } = useContext(MainContext);
   const sectionRef = useRef();
-  const url = `${window.location.origin}/#${id}`;
+  const url = `${window.location.origin}${window.location.pathname}#${id}`;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // console.log(entry);
-
         if (entry.isIntersecting) {
           setCurrentSection(sectionTitle);
         }

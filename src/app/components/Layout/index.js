@@ -5,15 +5,19 @@ import Header from "./Header";
 import Nav from "./Nav";
 import Main from "./MainBoard";
 import Footer from "./Footer";
+import Popup from "../../components/Popup";
 
 function Layout() {
   return (
-    <div className="Layout">
-      <Header />
-      <Nav />
-      <Main />
-      <Footer />
-    </div>
+    <React.Fragment>
+      <Popup />
+      <div className="Layout">
+        <Header />
+        <Nav />
+        <Main />
+        <Footer />
+      </div>
+    </React.Fragment>
   );
 }
 

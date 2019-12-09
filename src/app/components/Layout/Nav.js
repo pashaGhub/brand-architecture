@@ -40,6 +40,7 @@ function Nav() {
                     activeClass="Topic-active"
                     to={`${data.id}-${item.topicID}`}
                     spy={true}
+                    hashSpy={true}
                     smooth={true}
                     offset={-50}
                     duration={1000}
