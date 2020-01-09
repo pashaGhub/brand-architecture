@@ -4,7 +4,7 @@ import { Route, Redirect } from "react-router-dom";
 import { ROUTES } from "../../../constants";
 import { UserContext } from "../../../context";
 
-const PrivatRoute = ({ component: Component, ...rest }) => {
+const PrivateRoute = ({ component: Component, ...rest }) => {
   const { isAuth } = useContext(UserContext);
 
   return (
@@ -21,4 +21,4 @@ const PrivatRoute = ({ component: Component, ...rest }) => {
   );
 };
 
-export default PrivatRoute;
+export default PrivateRoute;

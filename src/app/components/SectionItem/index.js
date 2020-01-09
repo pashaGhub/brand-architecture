@@ -34,7 +34,7 @@ function SectionItem({ id, sectionTitle, topics }) {
     if (sectionRef.current) {
       observer.observe(sectionRef.current);
     }
-  }, [sectionRef]);
+  }, [sectionRef, sectionTitle]);
 
   return (
     <div className="Section-item" id={id} ref={sectionRef}>

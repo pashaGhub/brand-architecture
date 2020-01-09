@@ -1,21 +1,20 @@
-import React, { useContext } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
 
-import { UserContext } from "../../../context";
+// import { UserContext } from "../../../context";
 
 function Header() {
-  const { userLogout, user } = useContext(UserContext);
+  // const { userLogout } = useContext(UserContext);
   return (
     <React.Fragment>
       <header className="Header ">
         <div className="Header-logo">logo</div>
-        <div className="User-section">
-          <div className="User-name">{user}</div>
+        {/* <div className="User-section">
           <button className="Log-out" onClick={() => userLogout()}>
             <FontAwesomeIcon icon={faDoorOpen} />
           </button>
-        </div>
+        </div> */}
       </header>
     </React.Fragment>
   );

@@ -29,10 +29,8 @@ function UserProvider({ children }) {
       }
     });
     if (res.ok) {
-      console.log(res.json());
       setIsAuth(true);
     } else {
-      console.log(res);
       localStorage.removeItem("token");
       setToken(null);
       setIsAuth(false);
@@ -42,9 +40,6 @@ function UserProvider({ children }) {
 
   //LOGIN USER
   async function userLogin({ username, password }) {
-    console.log(username);
-    console.log(password);
-
     setLoading(true);
 
     const res = await fetch(API_ENDPOINTS.userLogin, {
