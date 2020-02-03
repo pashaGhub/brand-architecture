@@ -9,7 +9,7 @@ import { MainContext } from "../../../context";
 
 // import LayoutStyle from "./imgLayoutStyles";
 
-import Test from "./imgLayoutStyles";
+import ImgLayoutStyle from "./imgLayoutStyles";
 
 function SectionItem({ id, sectionTitle, topics }) {
   const { setCurrentSection, showPopup } = useContext(MainContext);
@@ -50,7 +50,7 @@ function SectionItem({ id, sectionTitle, topics }) {
       </div>
 
       {topics.map(data => (
-        <Test {...data} id={id} key={data.topicID} />
+        <ImgLayoutStyle {...data} id={id} key={data.topicID} />
       ))}
     </div>
   );

@@ -63,7 +63,7 @@ function LayoutStyle({ layout, topicImgs, topicVideo }) {
   return <VideoBox videoSrc={topicVideo} />;
 }
 
-function Test({
+function ImgLayoutStyle({
   topicID,
   layout,
   topicTitle,
@@ -125,4 +125,4 @@ function Test({
   );
 }
 
-export default Test;
+export default ImgLayoutStyle;

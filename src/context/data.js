@@ -133,6 +133,7 @@ const data = [
             image:
               "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60",
             alt: "yourAlt",
+            subtitle: "",
             imgText: "Something about image"
           },
           {
@@ -205,27 +206,27 @@ const data = [
             image: "https://www.colorhexa.com/333333.png",
             alt: "yourAlt",
             imgText: ["#333", "hex", "RGB	51 3	0", "CMYK	0	94 100 80"]
-          },
-          {
-            image: "https://www.colorhexa.com/333333.png",
-            alt: "yourAlt",
-            imgText: ["#333", "hex", "RGB	51 3	0", "CMYK	0	94 100 80"]
-          },
-          {
-            image: "https://www.colorhexa.com/333333.png",
-            alt: "yourAlt",
-            imgText: ["#333", "hex", "RGB	51 3	0", "CMYK	0	94 100 80"]
-          },
-          {
-            image: "https://www.colorhexa.com/333333.png",
-            alt: "yourAlt",
-            imgText: ["#333", "hex", "RGB	51 3	0", "CMYK	0	94 100 80"]
-          },
-          {
-            image: "https://www.colorhexa.com/333333.png",
-            alt: "yourAlt",
-            imgText: ["#333", "hex", "RGB	51 3	0", "CMYK	0	94 100 80"]
           }
+          // {
+          //   image: "https://www.colorhexa.com/333333.png",
+          //   alt: "yourAlt",
+          //   imgText: ["#333", "hex", "RGB	51 3	0", "CMYK	0	94 100 80"]
+          // },
+          // {
+          //   image: "https://www.colorhexa.com/333333.png",
+          //   alt: "yourAlt",
+          //   imgText: ["#333", "hex", "RGB	51 3	0", "CMYK	0	94 100 80"]
+          // },
+          // {
+          //   image: "https://www.colorhexa.com/333333.png",
+          //   alt: "yourAlt",
+          //   imgText: ["#333", "hex", "RGB	51 3	0", "CMYK	0	94 100 80"]
+          // },
+          // {
+          //   image: "https://www.colorhexa.com/333333.png",
+          //   alt: "yourAlt",
+          //   imgText: ["#333", "hex", "RGB	51 3	0", "CMYK	0	94 100 80"]
+          // }
           // {
           //   image:
           //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKVCjH6E6T9kLUqRgOnWIA8NDfCKsYqvAasEb61TFRzuWy2CTv9w&s",
