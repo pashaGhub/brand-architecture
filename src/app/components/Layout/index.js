@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import "./index.scss";
 
+import Loader from "./Loader";
 import Header from "./Header";
 import Nav from "./Nav";
 import Main from "./MainBoard";
@@ -16,14 +17,22 @@ function Layout() {
       <Popup />
       <div className="Layout">
         <Header />
-        {loader && <h5>loading...</h5>}
+        {loader && (
+          <div className="Centralized">
+            <Loader />
+          </div>
+        )}
         {!loader && !error.err && (
           <React.Fragment>
             <Nav />
             <Main />
           </React.Fragment>
         )}
-        {!loader && error.err && <h5>{error.message}</h5>}
+        {!loader && error.err && (
+          <div className="Centralized">
+            <h4>{error.message}</h4>
+          </div>
+        )}
 
         <Footer />
       </div>

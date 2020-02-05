@@ -4,9 +4,12 @@
 .Layout {
   display: grid;
   max-width: 1440px;
+  min-height: 100vh;
+  position: relative;
   margin: 0 auto;
+  // padding-bottom: 15rem;
   grid-template-columns: 20rem auto;
-  grid-template-rows: auto 10rem auto auto;
+  grid-template-rows: 5rem 10rem auto auto;
   grid-template-areas:
     "header header"
     "nav main"
@@ -16,6 +19,13 @@
 
   @include responsive(1023px) {
     display: block;
+  }
+
+  .Centralized {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    margin-left: -50px;
   }
 
   .Header {
@@ -158,20 +168,29 @@
   .Main {
     grid-area: main;
     padding: $sides-padding;
+    margin-bottom: 10rem;
+
+    @include responsive(1023px) {
+      display: inline-block;
+    }
   }
 
   .Footer {
     height: 10rem;
-    margin-top: 10rem;
+    // margin-top: 10rem;
     background: $dark-bg;
     color: $light-font-color;
-    @include minResponsive(1024px) {
-      grid-area: footer;
-    }
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    // max-width: 1440px;
+    // @include minResponsive(1024px) {
+    //   grid-area: footer;
+    // }
 
-    @include responsive(1023px) {
-      display: block;
-      width: 100%;
-    }
+    // @include responsive(1023px) {
+    //   display: block;
+    //   width: 100%;
+    // }
   }
 }
